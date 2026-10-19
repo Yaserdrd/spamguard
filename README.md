@@ -4,7 +4,7 @@ Yaser Durdu | Software Persona Yapay Zeka Mesleki Gelişim Programı | 19.10.202
 
 İngilizce SMS mesajlarını spam/normal olarak sınıflandıran, model kararına katkı veren kelimeleri gösteren eğitim projesi. Dört ders için ayrı çıktılar hazırlanmıştır.
 
-- Canlı uygulama: https://spamguard-yaser.vocalcoati8.chatgpt.site
+- Canlı uygulama: https://resplendent-mochi-e81047.netlify.app/
 - Kaynak kod: https://github.com/Yaserdrd/spamguard
 - Python notebook: [Google Colab](https://colab.research.google.com/github/Yaserdrd/spamguard/blob/main/python/SpamGuard_Python.ipynb)
 - ML notebook: [Google Colab](https://colab.research.google.com/github/Yaserdrd/spamguard/blob/main/ml/SpamGuard_ML.ipynb)
@@ -22,6 +22,7 @@ Yaser Durdu | Software Persona Yapay Zeka Mesleki Gelişim Programı | 19.10.202
 ```bash
 pip install -r requirements.txt
 python train.py
+python sanitize_web_release.py
 cd web
 npm ci
 npm test
@@ -56,7 +57,10 @@ Pozitif sınıf spamdır. LR testinde 5 yanlış pozitif ve 6 yanlış negatif v
 Ham veri ve öğrenilmiş model sözlüğü public depoda bulunmaz. Web teslim paketinde çalışır model dosyası vardır.
 
 ## Kontroller
-19.10.2026: iki notebook'un bütün kod hücreleri (input örnek mesajla), train.py, web testleri ve üretim derlemesi başarıyla çalıştırıldı. 28 örnekte Python/JavaScript model skorları arasındaki en büyük fark 5,55e-17. Gerçek tarayıcı üzerinden CRUD, kalıcılık ve mobil görünüm etkileşim kontrolü bu ortamda yapılamadı.
+19.10.2026: iki notebook'un bütün kod hücreleri (input örnek mesajla), train.py, web testleri ve üretim derlemesi başarıyla çalıştırıldı. Güncel filtreli web sürümünde 28 örnekte Python/JavaScript model skorları arasındaki en büyük fark 2,08e-17. Netlify üzerinde ekle/listele/güncelle/sil ve yenileme sonrası kalıcılık gerçek tarayıcıda doğrulandı. Mobil cihaz üzerinde ayrı test yapılmadı.
+
+## Public web sürümü
+Netlify yayını veri kaynaklı sayısal tokenları içermeyen 4.651 terimlik filtreli sözlük kullanır. Orijinal ML raporu değiştirilmedi. Web test doğruluğu %98,84, precision %96,03, recall %94,53, F1 %95,28; 5 yanlış pozitif ve 7 yanlış negatif. Üretim ve yeniden hesaplama için `python train.py` ardından `python sanitize_web_release.py` çalıştırın.
 
 ## Sınırlılıklar
 Model İngilizce SMS içindir. Türkçe, e-posta, phishing veya AI yazarlığı tespiti için doğrulanmadı. Benzer mesaj şablonları sonuçları iyimserleştirebilir. Skorlar kalibre edilmedi; normal tahmini güvenlik garantisi değildir. Ortak cihazda analiz kayıtlarını temizleyin.
