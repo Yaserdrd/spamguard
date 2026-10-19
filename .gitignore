@@ -5,3 +5,12 @@ __pycache__/
 *.pyc
 .env
 .env.*
+data/SMSSpamCollection
+data/readme
+**/sms_features.csv
+data/sms_text.csv
+**/models.joblib
+**/model.joblib
+outputs/lr_errors.csv
+outputs/browser_parity.json
+ml/hata_analizi.csv

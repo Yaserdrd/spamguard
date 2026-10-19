@@ -1,0 +1,7 @@
+file '01_Mesaji_Incele.png'
+duration 6
+file '02_Karari_Anla.png'
+duration 6
+file '03_Analizini_Kaydet.png'
+duration 6
+file '03_Analizini_Kaydet.png'

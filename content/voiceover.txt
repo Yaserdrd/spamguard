@@ -1,0 +1,1 @@
+Meet SpamGuard. Paste an English message, inspect the model score, and explore words that influenced its decision. Save your analysis in your browser. A learning prototype, with clear explanations and honest limits.

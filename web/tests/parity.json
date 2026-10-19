@@ -1,0 +1,1 @@
+{"texts": ["Can we meet at the library this evening?", "Congratulations! Claim your free prize now.", "Your order will arrive tomorrow.", "!!!", "", "FREE free prize prize", "MEETING notes for Monday"], "expected": [0.022933842482310198, 0.9869052431173999, 0.3619260548151038, 0.105772163727776, 0.105772163727776, 0.9578656886625255, 0.09703905154679278]}

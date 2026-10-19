@@ -1,0 +1,2 @@
+import React from 'react';
+export default function Icon({name}){return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{name==='shield'?<><path d="M12 3 21 7v5c0 5-9 9-9 9S3 17 3 12V7z"/><path d="m8 12 3 3 5-6"/></>:name==='chart'?<><path d="M4 4v16h17M8 16v-5m5 5V7m5 9v-8"/></>:name==='clock'?<><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></>:<><path d="M12 5v14M5 12h14"/></>}</svg>}
